@@ -2,4 +2,27 @@
 <resources>
     <color name="ColorPrimary">#3F51B5</color>
     <color name="ColorPrimaryDark">#303F9F</color>
+
+    <color name="AccentColor">#E91E63</color>
+    <color name="AccentColorRipple">#FF4081</color>
+    
+    
+    <color name="Color1">#E91E63</color>
+    <color name="Color2">#F44336</color>
+    <color name="Color3">#9C27B0</color>
+    <color name="Color4">#673AB7</color>
+    <color name="Color5">#3F51B5</color>
+    <color name="Color6">#2196F3</color>
+    <color name="Color7">#03A9F4</color>
+    <color name="Color8">#00BCD4</color>
+    <color name="Color9">#009688</color>
+    <color name="Color10">#4CAF50</color>
+    <color name="Color11">#8BC34A</color>
+    <color name="Color12">#CDDC39</color>
+    <color name="Color13">#FFEB3B</color>
+    <color name="Color14">#FFC107</color>
+    <color name="Color15">#FF9800</color>
+    <color name="Color16">#FF5722</color>
+    <color name="Color17">#795548</color>
+    <color name="Color18">#607D8B</color>
 </resources>

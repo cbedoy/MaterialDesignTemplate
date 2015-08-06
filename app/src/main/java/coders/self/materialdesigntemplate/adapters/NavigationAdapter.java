@@ -1,4 +1,4 @@
-package coders.self.materialdesigntemplate;
+package coders.self.materialdesigntemplate.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import coders.self.materialdesigntemplate.R;
+import coders.self.materialdesigntemplate.artifacts.AbstractAdapter;
+import coders.self.materialdesigntemplate.items.NavigationItem;
 
 /**
  * Created by Carlos Bedoy on 8/6/15.

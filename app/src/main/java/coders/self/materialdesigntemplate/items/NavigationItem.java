@@ -1,11 +1,10 @@
-package coders.self.materialdesigntemplate;
+package coders.self.materialdesigntemplate.items;
 
 /**
  * Created by Carlos Bedoy on 8/6/15.
  * <p/>
  * Mobile App Developer - MaterialDesignTemplate
  * <p/>
- * Pademobile
  */
 public class NavigationItem
 {
@@ -90,7 +89,7 @@ public class NavigationItem
         return userName;
     }
 
-    enum KindOfElement{
+    public enum KindOfElement{
         TOP,
         CELL
     }

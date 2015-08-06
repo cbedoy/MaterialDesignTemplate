@@ -1,4 +1,4 @@
-package coders.self.materialdesigntemplate;
+package coders.self.materialdesigntemplate.artifacts;
 
 import android.content.Context;
 import android.view.LayoutInflater;
