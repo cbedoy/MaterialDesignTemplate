@@ -5,6 +5,7 @@
     android:background="@color/ColorPrimary"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:paddingTop="@dimen/tool_bar_top_padding"
     tools:ignore="UnusedAttribute">
 
 </android.support.v7.widget.Toolbar>
