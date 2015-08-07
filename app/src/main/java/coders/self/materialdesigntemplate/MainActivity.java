@@ -1,11 +1,13 @@
 package coders.self.materialdesigntemplate;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ListView;
@@ -17,12 +19,14 @@ import coders.self.materialdesigntemplate.adapters.NavigationAdapter;
 import coders.self.materialdesigntemplate.fragments.PostFragment;
 import coders.self.materialdesigntemplate.items.NavigationItem;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout drawerLayout;
     private ListView mListView;
+
+    private Fragment mCurrentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +54,7 @@ public class MainActivity extends ActionBarActivity {
 
         List<NavigationItem> navigationItems = new ArrayList<>();
 
-        navigationItems.add(new NavigationItem("Carlos Bedoy", "carlos.bedoy@gmail.com", R.drawable.header_default_background, R.drawable.avatar));
+        navigationItems.add(new NavigationItem("Carlos Bedoy", "carlos.bedoy@gmail.com", R.drawable.default_wallpaper, R.drawable.avatar));
         navigationItems.add(new NavigationItem("News", R.drawable.ic_action_news));
         navigationItems.add(new NavigationItem("Biography", R.drawable.ic_action_biography));
         navigationItems.add(new NavigationItem("Posts", R.drawable.ic_action_posts));
@@ -66,12 +70,19 @@ public class MainActivity extends ActionBarActivity {
         mListView.setAdapter(navigationAdapter);
 
 
+        PostFragment postFragment = new PostFragment();
+
+        presentFragment(postFragment);
+
+    }
+
+    public void presentFragment(Fragment fragment){
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, new PostFragment());
+        fragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out);
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.addToBackStack(fragment.getTag());
         fragmentTransaction.commit();
-
-
     }
 
 }

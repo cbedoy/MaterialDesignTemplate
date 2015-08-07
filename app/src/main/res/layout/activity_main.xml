@@ -31,6 +31,7 @@
     <ListView
         android:dividerHeight="0dp"
         android:divider="@null"
+        android:elevation="16dp"
         android:id="@+id/list_view"
         android:layout_width="300dp"
         android:layout_height="match_parent"

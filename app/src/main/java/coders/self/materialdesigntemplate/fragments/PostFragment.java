@@ -2,12 +2,15 @@ package coders.self.materialdesigntemplate.fragments;
 
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
@@ -17,6 +20,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import coders.self.materialdesigntemplate.MainActivity;
 import coders.self.materialdesigntemplate.R;
 import coders.self.materialdesigntemplate.adapters.PostAdapter;
 import coders.self.materialdesigntemplate.items.PostItem;
@@ -31,6 +35,8 @@ import coders.self.materialdesigntemplate.items.PostItem;
 public class PostFragment extends Fragment
 {
     private List<Integer> mRandomColors;
+
+    private List<PostItem> postItemList;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,7 +48,7 @@ public class PostFragment extends Fragment
 
         floatingActionButton.attachToListView(listView);
 
-        List<PostItem> postItemList = new ArrayList<>();
+        postItemList = new ArrayList<>();
 
         Resources resources = getActivity().getResources();
         String loremString = resources.getString(R.string.Lorem);
@@ -61,6 +67,34 @@ public class PostFragment extends Fragment
 
 
         listView.setAdapter(new PostAdapter(getActivity(), inflater, postItemList));
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (getActivity() instanceof MainActivity) {
+
+                    MainActivity activity = (MainActivity) getActivity();
+
+                    PostItem postItem = postItemList.get(i);
+
+                    PostDetailFragment detailFragment = new PostDetailFragment();
+                    detailFragment.setPostItem(postItem);
+
+                    activity.presentFragment(detailFragment);
+                }
+            }
+        });
+
+        if(getActivity() instanceof MainActivity){
+
+            MainActivity mainActivity = (MainActivity) getActivity();
+
+            ActionBar actionBar = mainActivity.getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.ColorPrimary)));
+            }
+        }
 
         return view;
     }
