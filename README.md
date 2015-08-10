@@ -5,3 +5,12 @@
     Copyright 2015 - Carlos Alfredo Cervantes Bedoy 
     
     MaterialDesignTemplate 
+
+Thanks
+
+- https://github.com/hdodenhof/CircleImageView (Support CircleImage)
+- https://github.com/makovkastar/FloatingActionButton (Support FloatingActionButton)
+- https://github.com/satyan/sugar (Support ORM)
+- https://github.com/cesarferreira/AndroidQuickUtils (Reuse several Blur Algorithms)
+
+    @Carlos Bedoy
