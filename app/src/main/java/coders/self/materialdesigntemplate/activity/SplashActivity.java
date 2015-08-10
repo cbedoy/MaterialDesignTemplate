@@ -1,16 +1,16 @@
-package coders.self.materialdesigntemplate;
+package coders.self.materialdesigntemplate.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 
+import coders.self.materialdesigntemplate.R;
+
 /**
  * Created by Carlos Bedoy on 8/6/15.
- * <p/>
+ *
  * Mobile App Developer - MaterialDesignTemplate
- * <p/>
- * Pademobile
  */
 public class SplashActivity extends ActionBarActivity
 {

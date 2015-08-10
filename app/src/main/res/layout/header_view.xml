@@ -1,12 +1,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="178dp"
+    android:layout_height="180dp"
     android:orientation="vertical"
     android:elevation="10dp"
     android:weightSum="1">
 
     <ImageView
-        android:src="@drawable/default_wallpaper"
+        android:src="@color/AccentColor"
         android:layout_width="match_parent"
         android:scaleType="fitXY"
         android:id="@+id/background"

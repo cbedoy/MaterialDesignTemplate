@@ -10,10 +10,8 @@ import java.util.List;
 
 /**
  * Created by Carlos Bedoy on 8/6/15.
- * <p/>
+ *
  * Mobile App Developer - MaterialDesignTemplate
- * <p/>
- * Pademobile
  */
 public abstract class AbstractAdapter<T> extends BaseAdapter {
 

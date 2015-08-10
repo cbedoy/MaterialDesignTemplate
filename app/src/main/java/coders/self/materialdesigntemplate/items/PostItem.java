@@ -4,9 +4,8 @@ import java.util.Date;
 
 /**
  * Created by Carlos Bedoy on 8/6/15.
- * <p/>
+ *
  * Mobile App Developer - MaterialDesignTemplate
- * <p/>
  */
 public class PostItem
 {

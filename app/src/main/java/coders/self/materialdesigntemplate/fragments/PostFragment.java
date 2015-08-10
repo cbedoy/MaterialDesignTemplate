@@ -1,7 +1,6 @@
 package coders.self.materialdesigntemplate.fragments;
 
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,17 +19,15 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
-import coders.self.materialdesigntemplate.MainActivity;
+import coders.self.materialdesigntemplate.activity.MainActivity;
 import coders.self.materialdesigntemplate.R;
 import coders.self.materialdesigntemplate.adapters.PostAdapter;
 import coders.self.materialdesigntemplate.items.PostItem;
 
 /**
  * Created by Carlos Bedoy on 8/6/15.
- * <p/>
+ *
  * Mobile App Developer - MaterialDesignTemplate
- * <p/>
- * Pademobile
  */
 public class PostFragment extends Fragment
 {

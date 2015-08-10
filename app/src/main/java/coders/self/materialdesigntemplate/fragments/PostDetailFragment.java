@@ -1,14 +1,10 @@
 package coders.self.materialdesigntemplate.fragments;
 
-import android.annotation.TargetApi;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.transition.Fade;
-import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,16 +16,14 @@ import com.melnykov.fab.FloatingActionButton;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import coders.self.materialdesigntemplate.MainActivity;
+import coders.self.materialdesigntemplate.activity.MainActivity;
 import coders.self.materialdesigntemplate.R;
 import coders.self.materialdesigntemplate.items.PostItem;
 
 /**
  * Created by Carlos Bedoy on 8/7/15.
- * <p/>
+ *
  * Mobile App Developer - MaterialDesignTemplate
- * <p/>
- * Pademobile
  */
 public class PostDetailFragment extends Fragment
 {

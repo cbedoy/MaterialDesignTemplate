@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:elevation="4dp"
+        android:id="@+id/postView"
         android:background="#FFFFFF"
-
         tools:ignore="UnusedAttribute">
 
         <TextView
@@ -22,20 +22,20 @@
             android:background="@color/ColorPrimary"
             android:gravity="right"
             android:padding="16dp"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:text="Some Date"
             android:textColor="#FAFAFA"
             android:textSize="14sp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/avatar"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/avatar" />
+            android:src="@drawable/avatar_two" />
 
 
         <TextView
@@ -43,12 +43,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/dateView"
             android:layout_toEndOf="@+id/avatar"
-            android:layout_toRightOf="@+id/avatar"
             android:padding="16dp"
             android:text="Some Title of POST"
             android:lines="1"
             android:textStyle="bold"
-            android:id="@+id/titleView" />
+            android:id="@+id/titleView"
+            android:layout_toRightOf="@+id/avatar" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/titleView"
-            android:elevation="2dp"
+            android:elevation="1dp"
             android:id="@+id/divider" />
 
     </RelativeLayout>

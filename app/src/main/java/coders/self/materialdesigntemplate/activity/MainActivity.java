@@ -1,11 +1,10 @@
-package coders.self.materialdesigntemplate;
+package coders.self.materialdesigntemplate.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +14,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import coders.self.materialdesigntemplate.R;
 import coders.self.materialdesigntemplate.adapters.NavigationAdapter;
 import coders.self.materialdesigntemplate.fragments.PostFragment;
 import coders.self.materialdesigntemplate.items.NavigationItem;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.DrawerLayout);        // Drawer object Assigned to the view
+        drawerLayout = (DrawerLayout) findViewById(R.id.DrawerLayout);
         mDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.OpenDrawer,R.string.CloseDrawer){
             @Override
             public void onDrawerOpened(View drawerView) {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<NavigationItem> navigationItems = new ArrayList<>();
 
-        navigationItems.add(new NavigationItem("Carlos Bedoy", "carlos.bedoy@gmail.com", R.drawable.default_wallpaper, R.drawable.avatar));
+        navigationItems.add(new NavigationItem("Carlos Bedoy", "carlos.bedoy@gmail.com", R.drawable.wallpaper_02, R.drawable.avatar));
         navigationItems.add(new NavigationItem("News", R.drawable.ic_action_news));
         navigationItems.add(new NavigationItem("Biography", R.drawable.ic_action_biography));
         navigationItems.add(new NavigationItem("Posts", R.drawable.ic_action_posts));

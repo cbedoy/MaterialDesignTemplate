@@ -1,6 +1,8 @@
 package coders.self.materialdesigntemplate.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +14,15 @@ import java.util.List;
 import coders.self.materialdesigntemplate.R;
 import coders.self.materialdesigntemplate.artifacts.AbstractAdapter;
 import coders.self.materialdesigntemplate.items.NavigationItem;
+import coders.self.materialdesigntemplate.services.blur.BlurService;
+import coders.self.materialdesigntemplate.services.blur.algorithms.BoxBlur;
+import coders.self.materialdesigntemplate.services.blur.algorithms.GaussianFastBlur;
+import coders.self.materialdesigntemplate.services.blur.algorithms.StackBlur;
 
 /**
  * Created by Carlos Bedoy on 8/6/15.
- * <p/>
+ *
  * Mobile App Developer - MaterialDesignTemplate
- * <p/>
- * Pademobile
  */
 public class NavigationAdapter extends AbstractAdapter<NavigationItem> {
 
@@ -70,10 +74,21 @@ public class NavigationAdapter extends AbstractAdapter<NavigationItem> {
             }
 
             NavigationItem navigationItem = getDataModel().get(i);
-            topViewHolder.nameView.setText(navigationItem.getUserName());
-            topViewHolder.emailView.setText(navigationItem.getEmail());
-            topViewHolder.backgroundView.setImageResource(navigationItem.getImageResource());
-            topViewHolder.avatarView.setImageResource(navigationItem.getAvatarResource());
+
+            Bitmap bm = BitmapFactory.decodeResource(getContext().getResources(), navigationItem.getImageResource());
+
+            if (bm != null)
+            {
+                Bitmap bitmap = BlurService.getInstance().performBlurFromBitmapWithRadiusAndClassOfAlgorithm(bm, 50, StackBlur.class);
+
+                topViewHolder.backgroundView.setImageBitmap(bitmap);
+            }else {
+                topViewHolder.nameView.setText(navigationItem.getUserName());
+                topViewHolder.emailView.setText(navigationItem.getEmail());
+                topViewHolder.backgroundView.setImageResource(navigationItem.getImageResource());
+                topViewHolder.avatarView.setImageResource(navigationItem.getAvatarResource());
+
+            }
 
             return view;
         }
@@ -94,11 +109,20 @@ public class NavigationAdapter extends AbstractAdapter<NavigationItem> {
         TextView emailView;
         TextView nameView;
         ImageView avatarView;
+        Bitmap bitmapBlured;
 
+        public void setBluredImage(Bitmap bitmap) {
+            if (bitmapBlured == null && bitmap != null) {
+                bitmapBlured = bitmap;
+
+                backgroundView.setImageBitmap(bitmapBlured);
+            }
+        }
     }
 
     private class CellViewHolder {
         ImageView iconCell;
         TextView textCell;
+
     }
 }
