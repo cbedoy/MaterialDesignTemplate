@@ -19,6 +19,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+import coders.self.materialdesigntemplate.ApplicationLoader;
 import coders.self.materialdesigntemplate.activity.MainActivity;
 import coders.self.materialdesigntemplate.R;
 import coders.self.materialdesigntemplate.adapters.PostAdapter;
@@ -31,7 +32,6 @@ import coders.self.materialdesigntemplate.items.PostItem;
  */
 public class PostFragment extends Fragment
 {
-    private List<Integer> mRandomColors;
 
     private List<PostItem> postItemList;
     @Nullable
@@ -50,15 +50,15 @@ public class PostFragment extends Fragment
         Resources resources = getActivity().getResources();
         String loremString = resources.getString(R.string.Lorem);
 
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar, "Carlos Bedoy", loremString, getRandomColor()));
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_eigth, "Zabdiel Sue", loremString, getRandomColor()));
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_five, "David Israel", loremString, getRandomColor()));
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_four, "Alejandra Oregel", loremString, getRandomColor()));
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_one, "Edna Jett", loremString, getRandomColor()));
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_seven, "Alejandra Garcia", loremString, getRandomColor()));
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_six, "Paulina Musí", loremString, getRandomColor()));
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_three, "Jesus Cagide", loremString, getRandomColor()));
-        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_two, "David Angel", loremString, getRandomColor()));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar, "Carlos Bedoy", loremString, getRandomColor(0)));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_eigth, "Zabdiel Sue", loremString, getRandomColor(1)));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_five, "David Israel", loremString, getRandomColor(2)));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_four, "Alejandra Oregel", loremString, getRandomColor(3)));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_one, "Edna Jett", loremString, getRandomColor(4)));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_seven, "Alejandra Garcia", loremString, getRandomColor(5)));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_six, "Paulina Musí", loremString, getRandomColor(6)));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_three, "Jesus Cagide", loremString, getRandomColor(7)));
+        postItemList.add(new PostItem(Calendar.getInstance().getTime(), R.drawable.avatar_two, "David Angel", loremString, getRandomColor(8)));
 
         Collections.shuffle(postItemList);
 
@@ -96,35 +96,9 @@ public class PostFragment extends Fragment
         return view;
     }
 
-    public int getRandomColor(){
-        if (mRandomColors == null){
+    public int getRandomColor(int position){
 
-            Resources resources = getActivity().getResources();
+        return (int) ApplicationLoader.RANDOM_COLORS.get(position);
 
-            mRandomColors = new ArrayList<>();
-
-            mRandomColors.add(resources.getColor(R.color.Color1));
-            mRandomColors.add(resources.getColor(R.color.Color2));
-            mRandomColors.add(resources.getColor(R.color.Color3));
-            mRandomColors.add(resources.getColor(R.color.Color4));
-            mRandomColors.add(resources.getColor(R.color.Color5));
-            mRandomColors.add(resources.getColor(R.color.Color6));
-            mRandomColors.add(resources.getColor(R.color.Color7));
-            mRandomColors.add(resources.getColor(R.color.Color8));
-            mRandomColors.add(resources.getColor(R.color.Color9));
-            mRandomColors.add(resources.getColor(R.color.Color10));
-            mRandomColors.add(resources.getColor(R.color.Color11));
-            mRandomColors.add(resources.getColor(R.color.Color12));
-            mRandomColors.add(resources.getColor(R.color.Color13));
-            mRandomColors.add(resources.getColor(R.color.Color14));
-            mRandomColors.add(resources.getColor(R.color.Color15));
-            mRandomColors.add(resources.getColor(R.color.Color16));
-            mRandomColors.add(resources.getColor(R.color.Color17));
-            mRandomColors.add(resources.getColor(R.color.Color18));
-        }
-
-        Collections.shuffle(mRandomColors);
-
-        return mRandomColors.get(0);
     }
 }

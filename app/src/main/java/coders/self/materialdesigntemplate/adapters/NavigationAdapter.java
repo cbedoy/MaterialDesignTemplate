@@ -79,7 +79,7 @@ public class NavigationAdapter extends AbstractAdapter<NavigationItem> {
 
             if (bm != null)
             {
-                Bitmap bitmap = BlurService.getInstance().performBlurFromBitmapWithRadiusAndClassOfAlgorithm(bm, 50, StackBlur.class);
+                Bitmap bitmap = BlurService.getInstance().performBlurFromBitmapWithRadiusAndClassOfAlgorithm(bm, 30, StackBlur.class);
 
                 topViewHolder.backgroundView.setImageBitmap(bitmap);
             }else {

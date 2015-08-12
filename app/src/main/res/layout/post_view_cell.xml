@@ -12,7 +12,7 @@
         android:layout_margin="16dp"
         android:elevation="4dp"
         android:id="@+id/postView"
-        android:background="#FFFFFF"
+        android:background="@drawable/card_drawable"
         tools:ignore="UnusedAttribute">
 
         <TextView
